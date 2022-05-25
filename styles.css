@@ -1,0 +1,406 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ignore */
+/* all */
+/* above */
+
+.container {
+  background-color: #8bc6ec;
+  background-image: linear-gradient(135deg, #7bbee9 0%, #787dda 100%);
+
+  color: white;
+  font-family: "Roboto", sans-serif;
+
+  /* margin: 0 5vw; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+hr {
+  border: solid 1px blue;
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+}
+
+.column {
+  width: 33.3vw;
+  height: 100%;
+}
+
+.toprow {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  border-bottom: solid rgba(255, 255, 255, 0.5) 1px;
+}
+
+.trleft {
+  padding-left: 5vw;
+}
+
+.trmiddle {
+}
+
+.trminput {
+  border-radius: 2.6vh 1.4vw;
+  border: none;
+
+  font-size: 1rem;
+  padding: 1vh 1.1vw;
+  line-height: 1.5;
+  border: 2px solid #459bd0;
+  text-align: left;
+
+  width: 60%;
+}
+
+.trmbutton {
+  border-radius: 2.6vh 1.4vw;
+  border: none;
+
+  font-size: 1rem;
+  padding: 1vh 1.1vw;
+  border: 2px solid #459bd0;
+
+  background-color: inherit;
+}
+
+.trright {
+  padding-right: 5vw;
+}
+
+.secondrow {
+  height: 20vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 500;
+}
+
+.srtop {
+  font-size: 2rem;
+}
+
+.srmiddle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.thirdrow {
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  width: 55%;
+}
+
+.leftcolumn {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.detail {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detailheader {
+  color: rgba(255, 255, 255, 0.5);
+  text-align: left;
+  font-weight: 500;
+}
+
+.detailinfo {
+  font-size: 1.25rem;
+}
+
+.middlecolumn {
+  width: 35%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mc1rl,
+.mc1rr {
+  width: 100%;
+  font-size: 3.25rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.mc2r {
+  font-style: italic;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.mc3r {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.rightcolumn {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bottomrowabove {
+  font-size: 1.4rem;
+  margin-top: 2.5vh;
+  height: 7.5vh;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-top: solid rgba(255, 255, 255, 0.5) 1px;
+}
+
+.bottomrow {
+  height: 20vh;
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.forecast {
+  width: 15%;
+  height: 55%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+.fpart {
+  width: 100%;
+  height: 33%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.fmleft,
+.fmright {
+  padding: 0 2.5px;
+}
+
+.fbottom {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@font-face {
+  font-family: "Reenie";
+  src: url(ReenieBeanie-Regular.ttf);
+}
+
+.signature {
+  font-family: "Reenie";
+  font-size: 3rem;
+}
+
+.sorrymessage {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .leftcolumn,
+  .rightcolumn {
+    display: none;
+  }
+  .search {
+    border-radius: 6px;
+  }
+
+  .secondrow {
+    text-align: center;
+    padding-top: 5vh;
+  }
+
+  .thirdrow {
+    height: 35vh;
+  }
+
+  .middlecolumn {
+    width: 100%;
+  }
+
+  .trleft {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .container {
+    display: none;
+  }
+
+  .sorrymessage {
+    display: block;
+    color: black;
+    width: 75%;
+    height: 75%;
+    line-height: 2;
+    padding: 25px;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+  }
+}
