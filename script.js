@@ -28,6 +28,7 @@ let mainfeelslike = document.getElementById("mainfeelslike");
 let mainicon = document.getElementById("mainicon");
 let searchbutton = document.getElementById("searchbutton");
 let searchinput = document.getElementById("searchinput");
+let temprow = document.getElementById("temprow");
 let cloudEmojis = ["🌤", "⛅", "🌥", "☁"];
 let d = new Date();
 // localStorage.chosenLocation = "Madrid";
@@ -84,9 +85,14 @@ async function fetchCurentWeather() {
         chosenLocation +
         "&appid=12324ae286065bd66e63f9bb7ecbe1fa&units=metric"
     );
-    return await response.json();
-  } catch {
-    console.log("error");
+    if (response.ok) {
+      temprow.style.display = "none";
+      return await response.json();
+    } else {
+      throw new Error("no response");
+    }
+  } catch (error) {
+    console.log(error);
   }
 }
 
@@ -144,9 +150,13 @@ async function fetchForecast() {
         chosenLocation +
         "&appid=12324ae286065bd66e63f9bb7ecbe1fa&units=metric"
     );
-    return await response.json();
-  } catch {
-    console.log("error");
+    if (response.ok) {
+      return await response.json();
+    } else {
+      throw new Error("no response");
+    }
+  } catch (error) {
+    console.log(error);
   }
 }
 
@@ -253,4 +263,8 @@ searchbutton.addEventListener("click", function () {
   chosenLocation = searchinput.value;
   localStorage.chosenLocation = chosenLocation;
   location.reload();
+});
+
+searchinput.addEventListener("input", function (e) {
+  console.log(e);
 });

@@ -174,31 +174,43 @@ hr {
 
 .trleft {
   padding-left: 5vw;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .trmiddle {
 }
 
 .trminput {
-  border-radius: 2.6vh 1.4vw;
-  border: none;
+  text-align: center;
+  border-radius: 5vh;
 
   font-size: 1rem;
   padding: 1vh 1.1vw;
   line-height: 1.5;
-  border: 2px solid #459bd0;
+  border: 1px solid white;
   text-align: left;
 
   width: 60%;
+
+  background-color: inherit;
+  transition: all 0.5s ease-in;
+  color: white;
+}
+
+.trminput:focus {
+  outline: none;
+  border: solid 1px#496DDB;
+  color: #496ddb;
 }
 
 .trmbutton {
-  border-radius: 2.6vh 1.4vw;
+  border-radius: 5vh;
   border: none;
 
-  font-size: 1rem;
+  font-size: 1.25rem;
   padding: 1vh 1.1vw;
-  border: 2px solid #459bd0;
+  /* border: 2px solid #459bd0; */
 
   background-color: inherit;
 }
@@ -361,11 +373,24 @@ hr {
   display: none;
 }
 
-@media only screen and (max-width: 700px) {
-  .leftcolumn,
-  .rightcolumn {
-    display: none;
+@media only screen and (max-width: 1400px) {
+  .detailheader,
+  .detailinfo {
+    text-align: center;
   }
+}
+
+@media only screen and (max-width: 900px) {
+  .secondrow {
+    width: 75%;
+  }
+
+  .thirdrow {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
   .search {
     border-radius: 6px;
   }
@@ -388,6 +413,19 @@ hr {
   }
 }
 
+@media only screen and (max-width: 450px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .fFive,
+  .fFour {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 325px) {
   .container {
     display: none;
@@ -403,4 +441,36 @@ hr {
     text-align: center;
     font-family: Roboto, sans-serif;
   }
+}
+
+.temprow {
+  padding-top: 2.5vh;
+}
+
+@media only screen and (max-height: 550px) {
+  .container {
+    display: none;
+  }
+
+  .sorrymessage {
+    display: block;
+    color: black;
+    width: 75%;
+    height: 75%;
+    line-height: 2;
+    padding: 25px;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+  }
+}
+
+.mc1rr:hover,
+.trmbutton:hover,
+.signature:hover,
+.forecast:hover,
+.detail:hover,
+.midcol:hover,
+.srdetail:hover,
+.trleft:hover {
+  transform: scale(1.2, 1.2);
 }

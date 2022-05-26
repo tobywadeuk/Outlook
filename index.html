@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
-    <title>⚡ Outlook</title>
+    <title>Clima</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡️</text></svg>">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,22 +26,29 @@
 
         <div class="toprow row">
             <div class="trleft">
-                Outlook
+                ⚡️ Clima
             </div>
             <div class="trmiddle">
-                <input class="trminput search" type="text" id="searchinput">
-                <button class="trmbutton  search" id="searchbutton">🔎</button>
+                <form action="">
+                    <input class="trminput search" type="text" id="searchinput">
+                    <button class="trmbutton  search" id="searchbutton">🔎</button>
+                </form>
             </div>
             <div class="trright signature">
                 TW
             </div>
         </div>
 
+
+        <div class="temprow" id="temprow">
+            ⬆️ Please choose a location ⬆️
+        </div>
+
         <div class="secondrow row">
-            <div class="srtop" id="olLocation">
+            <div class="srtop srdetail" id="olLocation">
 
             </div>
-            <div class="srmiddle" id="olTime">
+            <div class="srmiddle  srdetail" id="olTime">
 
             </div>
         </div>
@@ -72,16 +82,16 @@
 
             <div class="middlecolumn column">
                 <!-- <div class="mc1r"> -->
-                <div class="mc1rr" id="mainicon">
+                <div class="mc1rr midcol" id="mainicon">
 
                 </div>
-                <div class="mc3r" id="maindesc">
+                <div class="mc3r midcol" id="maindesc">
 
                 </div>
-                <div class="mc1rl" id="maintemp">
+                <div class="mc1rl midcol" id="maintemp">
 
                 </div>
-                <div class="mc2r" id="mainfeelslike">
+                <div class="mc2r midcol" id="mainfeelslike">
 
                 </div>
 
