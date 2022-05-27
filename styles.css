@@ -133,8 +133,9 @@ table {
 /* above */
 
 .container {
-  background-color: #8bc6ec;
-  background-image: linear-gradient(135deg, #7bbee9 0%, #787dda 100%);
+  /* background-color: #8bc6ec; */
+  /* background-image: linear-gradient(135deg, #7bbee9 0%, #787dda 100%); */
+  background-image: url(image.jpeg);
 
   color: white;
   font-family: "Roboto", sans-serif;
