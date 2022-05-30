@@ -29,9 +29,11 @@ let mainicon = document.getElementById("mainicon");
 let searchbutton = document.getElementById("searchbutton");
 let searchinput = document.getElementById("searchinput");
 let temprow = document.getElementById("temprow");
+let container = document.getElementById("container");
+let toprow = document.getElementById("toprow");
+let switchElement = document.getElementById("switch");
 let cloudEmojis = ["🌤", "⛅", "🌥", "☁"];
-let d = new Date();
-// localStorage.chosenLocation = "Madrid";
+
 let chosenLocation = localStorage.chosenLocation;
 
 let arrEmojis = ["⚡", "🌧", "🌧", "🌨", "💨", "🌞", "🌥"];
@@ -78,6 +80,13 @@ let monthsArr = [
   "December",
 ];
 
+let UTCAdjust = 7200;
+
+Date.prototype.addHours = function (h) {
+  this.setTime(this.getTime() + h * 60 * 60 * 1000);
+  return this;
+};
+
 async function fetchCurentWeather() {
   try {
     let response = await fetch(
@@ -96,7 +105,13 @@ async function fetchCurentWeather() {
   }
 }
 
+let d = new Date().addHours(-2);
+
 fetchCurentWeather().then((weather) => {
+  UTCAdjust = weather.timezone;
+  let hoursToAdd = weather.timezone / 60 / 60;
+  d = d.addHours(hoursToAdd);
+
   let cwDay = d.getDay();
   let cwDate = d.getDate();
   let cwMonth = d.getMonth();
@@ -134,8 +149,9 @@ fetchCurentWeather().then((weather) => {
 
   olWind.textContent = Math.round(cwWind) + " m/s";
   olCloud.textContent = cwClouds + "%";
-  OlSunrise.textContent = format_time(cwRise + 7200).slice(0, 5);
-  OlSunset.textContent = format_time(cwSet + 7200).slice(0, 5);
+
+  OlSunrise.textContent = format_time(cwRise + UTCAdjust).slice(0, 5);
+  OlSunset.textContent = format_time(cwSet + UTCAdjust).slice(0, 5);
   OlHumidity.textContent = cwHumidity + "%";
   maindesc.textContent = Capitalize(cwDesc);
   maintemp.textContent = Math.round(cwTemp) + "°C";
@@ -162,11 +178,12 @@ async function fetchForecast() {
 
 fetchForecast().then((forecast) => {
   let fPop = forecast.list[0].pop;
-  let fDT0 = forecast.list[0].dt_txt;
-  let fDT1 = forecast.list[1].dt_txt;
-  let fDT2 = forecast.list[2].dt_txt;
-  let fDT3 = forecast.list[3].dt_txt;
-  let fDT4 = forecast.list[4].dt_txt;
+  let fDT0 = format_time(forecast.list[0].dt + UTCAdjust);
+  let fDT1 = format_time(forecast.list[1].dt + UTCAdjust);
+  let fDT2 = format_time(forecast.list[2].dt + UTCAdjust);
+  let fDT3 = format_time(forecast.list[3].dt + UTCAdjust);
+  let fDT4 = format_time(forecast.list[4].dt + UTCAdjust);
+
   let fTemp0 = forecast.list[0].main.temp;
   let fTemp1 = forecast.list[1].main.temp;
   let fTemp2 = forecast.list[2].main.temp;
@@ -185,11 +202,11 @@ fetchForecast().then((forecast) => {
 
   //
 
-  forecastOneTime.textContent = fDT0.slice(11, 16);
-  forecastTwoTime.textContent = fDT1.slice(11, 16);
-  forecastThreeTime.textContent = fDT2.slice(11, 16);
-  forecastFourTime.textContent = fDT3.slice(11, 16);
-  forecastFiveTime.textContent = fDT4.slice(11, 16);
+  forecastOneTime.textContent = fDT0.slice(0, 5);
+  forecastTwoTime.textContent = fDT1.slice(0, 5);
+  forecastThreeTime.textContent = fDT2.slice(0, 5);
+  forecastFourTime.textContent = fDT3.slice(0, 5);
+  forecastFiveTime.textContent = fDT4.slice(0, 5);
 
   forecastOneTemp.textContent = Math.round(fTemp0) + "°C";
   forecastTwoTemp.textContent = Math.round(fTemp1) + "°C";
@@ -265,6 +282,12 @@ searchbutton.addEventListener("click", function () {
   location.reload();
 });
 
-searchinput.addEventListener("input", function (e) {
-  console.log(e);
+let currentHour = new Date().getHours();
+
+if (currentHour > 8 && currentHour < 20) {
+  container.classList.toggle("nightmode");
+}
+
+switchElement.addEventListener("change", function () {
+  container.classList.toggle("nightmode");
 });

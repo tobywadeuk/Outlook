@@ -19,23 +19,35 @@
 </head>
 
 <body>
+
+    <a class="madeby" target="_blank" href="https://www.tobywade.co.uk/link/">
+        <img class="logoimg" src="toby img.jpg" alt="">
+        <p>by Toby Wade</p>
+    </a>
+
+
     <div class="sorrymessage">
         Sorry, your phone is too small for this application. Please try this out on a computer or a bigger phone.
     </div>
-    <div class="container">
+    <div class="container nightmode" id="container">
 
-        <div class="toprow row">
+        <div class="toprow row" id="toprow">
             <div class="trleft">
                 ⚡️ Clima
             </div>
             <div class="trmiddle">
                 <form action="">
-                    <input class="trminput search" type="text" id="searchinput">
+                    <input autocomplete="off" class="trminput search" type="text" id="searchinput">
                     <button class="trmbutton  search" id="searchbutton">🔎</button>
                 </form>
             </div>
-            <div class="trright signature">
-                TW
+            <div class="trright">
+                <div class="switch" id="switch">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                </div>
             </div>
         </div>
 
@@ -75,7 +87,6 @@
                         Rain Chance
                     </div>
                     <div class="detailinfo  dOne" id="olRain">
-
                     </div>
                 </div>
             </div>

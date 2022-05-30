@@ -135,7 +135,7 @@ table {
 .container {
   /* background-color: #8bc6ec; */
   /* background-image: linear-gradient(135deg, #7bbee9 0%, #787dda 100%); */
-  background-image: url(image.jpeg);
+  background-image: url(imageday.jpg);
 
   color: white;
   font-family: "Roboto", sans-serif;
@@ -148,6 +148,10 @@ table {
 
   font-size: 1.25rem;
   line-height: 1.5;
+}
+
+.nightmode {
+  background-image: url(imagenight.jpeg);
 }
 
 hr {
@@ -203,6 +207,7 @@ hr {
   outline: none;
   border: solid 1px#496DDB;
   color: #496ddb;
+  color: white;
 }
 
 .trmbutton {
@@ -218,6 +223,7 @@ hr {
 
 .trright {
   padding-right: 5vw;
+  padding-top: 10vh;
 }
 
 .secondrow {
@@ -467,11 +473,106 @@ hr {
 
 .mc1rr:hover,
 .trmbutton:hover,
-.signature:hover,
 .forecast:hover,
 .detail:hover,
 .midcol:hover,
 .srdetail:hover,
 .trleft:hover {
   transform: scale(1.2, 1.2);
+}
+
+.madeby {
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 100;
+
+  padding: 0.8vh 0.4vw;
+  background: #fbf9ff;
+  border: solid 1px #656565;
+  border-bottom: none;
+  border-right: none;
+
+  vertical-align: middle;
+}
+
+.madeby p {
+  /* display: inline; */
+  line-height: 1.625;
+  letter-spacing: 0.025em;
+  font-family: "Helvetica Neue", sans-serif;
+  color: #656565;
+
+  display: inline;
+  margin-left: 0.5vw;
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.logoimg {
+  height: auto;
+  width: 1.5vw;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 1.5vw;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* switch */
+.switch {
+  display: block;
+  height: 13vh;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #2b2b2b;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
