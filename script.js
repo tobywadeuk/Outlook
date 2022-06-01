@@ -236,7 +236,7 @@ fetchForecast().then((forecast) => {
     iconToWords(mainDescArray[i], subDescArray[i], iconArray[i]);
   }
 
-  olRain.textContent = fPop + "%";
+  olRain.textContent = fPop * 100 + "%";
 });
 
 function iconToWords(mainD, subD, icon) {
